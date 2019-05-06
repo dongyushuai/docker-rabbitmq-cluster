@@ -1,14 +1,14 @@
 rabbit1:
-  image: fixiu/rabbitmq-server:3.7.14
+  image: fixiu/rabbitmq-server-cluster:3.7.14
   hostname: rabbit1
   ports:
     - "5672:5672"
     - "15672:15672"
   environment:
-    - RABBITMQ_DEFAULT_USER=myuser
-    - RABBITMQ_DEFAULT_PASS=mypass
+    - RABBITMQ_DEFAULT_USER=user
+    - RABBITMQ_DEFAULT_PASS=pass
 rabbit2:
-  image: fixiu/rabbitmq-server:3.7.14
+  image: fixiu/rabbitmq-server-cluster:3.7.14
   hostname: rabbit2
   links:
     - rabbit1
@@ -21,7 +21,7 @@ rabbit2:
       - "15673:15672"
 
 rabbit3:
-  image: fixiu/rabbitmq-server:3.7.14
+  image: fixiu/rabbitmq-server-cluster:3.7.14
   hostname: rabbit3
   links:
     - rabbit1

@@ -1,4 +1,4 @@
-FROM fixiu/rabbitmq-base:3.7.14
+FROM fixiu/rabbitmq-server:3.7.14
 MAINTAINER dongyshd dongyshd@gmail.com
 
 ADD rabbitmq.config /etc/rabbitmq/
